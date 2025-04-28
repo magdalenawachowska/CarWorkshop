@@ -16,5 +16,7 @@ namespace CarWorkshop.Domain.Entities
         public string EncodedName { get; private set; } = default;        //nazwa strony dla wyszukiwarek
 
         public void EncodeName() => EncodedName = Name.ToLower().Replace(" ", "-");
-     }
+        
+        public string? About { get; set; }         //?- wlasciwosc opcjonalna
+    }
 }
