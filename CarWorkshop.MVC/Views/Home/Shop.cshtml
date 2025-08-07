@@ -1,0 +1,61 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Welcome</h2>
+    <p>Welcome in our gymrats kingdom</p>
+</div>
+
+<p>Available products:</p>
+
+<div>
+Product Name | Price
+<br />
+@foreach (var product in Model)
+{
+    <p>@product.Name | @product.Price</p>
+}
+</div>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-6 border">
+            Product Name
+        </div>
+        <div class="col-sm-2 border">
+            Price
+        </div>
+        <div class="col-sm-4 border">
+            Availability
+        </div>
+        <div class="row">
+            <div class="col-sm-6 border">
+                @foreach (var product in Model)
+                {
+                    <p>@product.Name</p>
+                }
+            </div>
+            <div class="col-sm-2 border">
+                @foreach (var product in Model)
+                {
+                    <p>@product.Price</p>
+                }
+            </div>
+            <div class="col-sm-4 border">
+                @foreach (var product in Model)
+                {
+                    @if (product.Stock > 0)
+                    {
+                        <button>Add to cart</button>
+                    }
+                    else
+                    {
+                        <p>Product out of stock</p>
+                    }
+                }
+            </div>
+    </div>
+</div>

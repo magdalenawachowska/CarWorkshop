@@ -18,6 +18,33 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Shop()
+    {
+        var model = new List<Product>()
+        {
+            new Product()
+            {
+                Name="Creatine 500g",
+                Price=34,
+                Stock=10
+            },
+            new Product()
+            {
+                Name="Collagen 500g",
+                Price=45,
+                Stock=0
+            }
+        };
+        return View(model);
+
+    }
+
+    public IActionResult Home()
+    {
+  
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         var model = new List<Person>()
